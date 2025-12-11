@@ -7,6 +7,7 @@ st.title("Uber pickups in New york city NYC")
 DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
             'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
             
+            
 DATE_COLUMN = 'data/time'
 
 def load_data(nrows):
