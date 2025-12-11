@@ -17,9 +17,9 @@ def load_data(nrows):
     data[DATE_COLUMN]=pd.to_datetime(data[DATE_COLUMN])
     return
     
-data_load_state = st.text("Data Loading.....")
-data = load_data(10000)
-data_load_state.text("DONE")
+data_load_state = st.text('Loading data...')
+data = load_data(100000)
+data_load_state.text('Done!')
 
 if st.checkbox("Show Raw data"):
     st.subheader("Row data")
