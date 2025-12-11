@@ -17,9 +17,14 @@ def load_data(nrows):
     return
     
 data_load_state = st.text("Data Loading.....")
-data = data_load_state(10000)
+data = load_state(10000)
 data_load_state.text("DONE")
 
 if st.checkbox("Show Raw data"):
     st.subheader("Row data")
     st.write(data)
+    
+ st.subheader("Number of pickup per hour")
+ hist_values = np.histogram(data[DATA_COLUMN].dt.hour, bins=24, range=(0,24))[0]
+ 
+ st.bar_chart(hist_values)
